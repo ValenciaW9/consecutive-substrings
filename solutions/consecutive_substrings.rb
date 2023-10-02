@@ -1,5 +1,21 @@
-def consecutive_substrings(string)
-  subs = []
+def consecutive_substrings(str)
+  substrings = []
+
+
+  (0...str.length).each do |i|
+    (i + 1..str.length).each do |j|
+      substrings << str[i..j]
+      
+    end
+  end
+
+   substrings
+end 
+
+#Test caases
+p consecutive_substrings('abc') # ['a', 'ab', 'abc', 'bc', 'c']
+p consecutive_substrings('a') #{ ['a']
+
 
   string.split('').each_with_index do |char, idx|
     subs << char
@@ -12,7 +28,9 @@ def consecutive_substrings(string)
   end
 
   subs
-end
+
+
+
 
 if __FILE__ == $PROGRAM_NAME
   puts "Expecting: ['a', 'ab', 'abc', 'b', 'bc', 'c']"
